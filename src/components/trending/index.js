@@ -1,13 +1,22 @@
 import { DataSwitch } from "../dataSwitch";
-import { content } from "./content";
 import { HorizontalList } from "../horizontalList";
 
-export const Trending = ({ trendingList }) => {
+export const Trending = ({
+  trendingList,
+  handleProgram,
+  content,
+  period,
+  handleSwitch,
+}) => {
   return (
     <div className="mb-10">
       <div className="py-8 px-8 flex items-center gap-4">
         <h1 className="text-2xl font-bold">{content.title}</h1>
-        <DataSwitch texts={content.switch_texts} activeText="Hoje" />
+        <DataSwitch
+          options={content.switch_options}
+          selectedOption={period}
+          handleSwitch={handleSwitch}
+        />
       </div>
       <div
         style={{
@@ -16,7 +25,7 @@ export const Trending = ({ trendingList }) => {
         }}
         className="pl-10 bg-no-repeat bg-cover"
       >
-        <HorizontalList dataList={trendingList} />
+        <HorizontalList dataList={trendingList} handleProgram={handleProgram} />
       </div>
     </div>
   );

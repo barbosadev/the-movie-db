@@ -1,23 +1,24 @@
-export const DataSwitch = ({ texts, activeText }) => {
+export const DataSwitch = ({ options, selectedOption, handleSwitch }) => {
   return (
     <div
       className="flex items-center h-8 font-bold rounded-full border-black text-sm"
       style={{ borderWidth: "1px" }}
     >
-      {texts.map((el, i) => (
+      {options.map((el, i) => (
         <div
           key={i}
           className={`${
-            activeText === el && "bg-slate-800"
+            selectedOption === el.option && "bg-slate-800"
           } px-6 rounded-full h-full flex items-center`}
         >
           <button
+            onClick={() => handleSwitch(el.option)}
             className={`${
-              activeText === el &&
+              selectedOption === el.option &&
               "bg-gradient-to-r from-green-200 to-green-400 bg-clip-text text-transparent"
             }`}
           >
-            {el}
+            {el.text}
           </button>
         </div>
       ))}
