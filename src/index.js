@@ -7,6 +7,7 @@ import { BrowserRouter, Route, Routes } from "react-router-dom";
 import { Program } from "./pages/program";
 import { SearchPage } from "./pages/search";
 import { SpeedInsights } from "@vercel/speed-insights/react";
+import { Analytics } from "@vercel/analytics/react";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
@@ -20,6 +21,7 @@ root.render(
       </Routes>
     </BrowserRouter>
     <SpeedInsights />
+    <Analytics />
   </React.StrictMode>
 );
 
