@@ -6,6 +6,7 @@ import reportWebVitals from "./reportWebVitals";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import { Program } from "./pages/program";
 import { SearchPage } from "./pages/search";
+import { SpeedInsights } from "@vercel/speed-insights/react";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
@@ -18,6 +19,7 @@ root.render(
         <Route element={<SearchPage />} path="/search-page/:query" />
       </Routes>
     </BrowserRouter>
+    <SpeedInsights />
   </React.StrictMode>
 );
 
