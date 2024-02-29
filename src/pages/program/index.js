@@ -112,6 +112,7 @@ export const Program = () => {
                   }}
                 >
                   <img
+                    alt={programCredits.name}
                     className="rounded-t-lg w-full"
                     loading="lazy"
                     src={`https://media.themoviedb.org/t/p/w138_and_h175_face${programCredits?.profile_path}`}

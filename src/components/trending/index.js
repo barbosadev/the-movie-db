@@ -1,6 +1,4 @@
 import { DataSwitch } from "../dataSwitch";
-import { dateMask } from "../../utils/dateMask.js";
-import { roundVote } from "../../utils/roundVote";
 import { content } from "./content";
 import { HorizontalList } from "../horizontalList";
 

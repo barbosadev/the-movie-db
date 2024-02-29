@@ -29,6 +29,7 @@ export const SearchPage = () => {
           >
             {program.poster_path !== null ? (
               <img
+                alt={program.title || program.name}
                 className="rounded-l-lg"
                 loading="lazy"
                 src={`https://media.themoviedb.org/t/p/w94_and_h141_bestv2${program?.poster_path}`}
@@ -41,6 +42,7 @@ export const SearchPage = () => {
                 className="px-6 py-7 flex items-center rounded-l-lg"
               >
                 <img
+                  alt={program.title || program.name}
                   className="h-20"
                   loading="lazy"
                   src={
