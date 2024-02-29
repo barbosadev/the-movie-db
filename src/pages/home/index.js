@@ -20,7 +20,7 @@ export const Home = () => {
     });
   };
 
-  useEffect(() => getTrendingList, []);
+  useEffect(() => getTrendingList(), []);
 
   const handleSearch = (query) => {
     navigate(`/search-page/${query}`);
