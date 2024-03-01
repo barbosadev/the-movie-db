@@ -1,4 +1,4 @@
-import { ProgramCard } from "../programCard/index.js";
+import { ProgramCard } from "../programCard/index";
 
 export const HorizontalList = ({ dataList, handleProgram }) => {
   return (

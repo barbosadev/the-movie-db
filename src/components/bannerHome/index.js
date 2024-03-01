@@ -2,6 +2,7 @@ export const BannerHome = ({ children, content }) => {
   return (
     <>
       <div
+        data-testid="banner-background"
         className="h-80 bg-no-repeat bg-cover bg-center"
         style={{
           backgroundImage: `url('https://deliriumnerd.com/wp-content/uploads/2022/09/Ruptura-serie.jpg')`,

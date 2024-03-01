@@ -1,4 +1,4 @@
-function convertDateToUTC(date) {
+export const convertDateToUTC = (date) => {
   return new Date(
     date.getUTCFullYear(),
     date.getUTCMonth(),
@@ -7,9 +7,9 @@ function convertDateToUTC(date) {
     date.getUTCMinutes(),
     date.getUTCSeconds()
   );
-}
+};
 
-const mask = (date, options) => {
+export const mask = (date, options) => {
   return new Date(convertDateToUTC(new Date(date))).toLocaleDateString(
     "pt-BR",
     options
