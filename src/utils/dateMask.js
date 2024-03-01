@@ -9,44 +9,39 @@ function convertDateToUTC(date) {
   );
 }
 
-export const shortDateMask = (date) => {
+const mask = (date, options) => {
   return new Date(convertDateToUTC(new Date(date))).toLocaleDateString(
     "pt-BR",
-    {
-      year: "numeric",
-      month: "short",
-      day: "numeric",
-    }
+    options
   );
+};
+
+export const shortDateMask = (date) => {
+  return mask(date, {
+    year: "numeric",
+    month: "short",
+    day: "numeric",
+  });
 };
 
 export const longDateMask = (date) => {
-  return new Date(convertDateToUTC(new Date(date))).toLocaleDateString(
-    "pt-BR",
-    {
-      year: "numeric",
-      month: "long",
-      day: "numeric",
-    }
-  );
+  return mask(date, {
+    year: "numeric",
+    month: "long",
+    day: "numeric",
+  });
 };
 
 export const numericDateMask = (date) => {
-  return new Date(convertDateToUTC(new Date(date))).toLocaleDateString(
-    "pt-BR",
-    {
-      year: "numeric",
-      month: "numeric",
-      day: "numeric",
-    }
-  );
+  return mask(date, {
+    year: "numeric",
+    month: "numeric",
+    day: "numeric",
+  });
 };
 
 export const fullYearDateMask = (date) => {
-  return new Date(convertDateToUTC(new Date(date))).toLocaleDateString(
-    "pt-BR",
-    {
-      year: "numeric",
-    }
-  );
+  return mask(date, {
+    year: "numeric",
+  });
 };
