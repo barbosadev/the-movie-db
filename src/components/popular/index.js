@@ -18,7 +18,7 @@ export const MostPopular = ({
           handleSwitch={handleSwitch}
         />
       </div>
-      <div className="pl-10">
+      <div>
         <HorizontalList
           dataList={
             popularList[
