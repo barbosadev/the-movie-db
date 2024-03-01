@@ -11,7 +11,7 @@ export const ProgramCard = ({ program, handleProgram }) => {
         <LazyLoadImage
           onClick={() => handleProgram(program.media_type, program.id)}
           className="rounded-xl cursor-pointer"
-          alt={program.title}
+          alt={program.title || program.name}
           effect="blur"
           src={`https://image.tmdb.org/t/p/w220_and_h330_face${program.poster_path}`}
         />
