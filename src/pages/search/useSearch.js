@@ -1,10 +1,12 @@
-import { useEffect, useState } from "react";
+import { Context } from "../../context";
+import { useContext, useEffect, useState } from "react";
 import { getSearchResult } from "../../services/search";
 import { useParams, useNavigate } from "react-router-dom";
 
 export const useSearch = () => {
   const { query } = useParams();
   const navigate = useNavigate();
+  const [error, setError] = useContext(Context);
   const [resultList, setResultList] = useState([]);
   const [searchText, setSearchText] = useState("");
 
@@ -17,9 +19,13 @@ export const useSearch = () => {
   };
 
   useEffect(() => {
-    getSearchResult(query).then((result) => {
-      setResultList(result.results);
-    });
+    getSearchResult(query)
+      .then((result) => {
+        setResultList(result.results);
+      })
+      .catch((error) => {
+        setError(error);
+      });
 
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [query]);

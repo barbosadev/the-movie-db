@@ -6,6 +6,6 @@ export const getPopular = async (media_type = "tv") => {
 
     return data;
   } catch (error) {
-    // throw error.message;
+    throw error.message;
   }
 };

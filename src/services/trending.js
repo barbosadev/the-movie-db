@@ -6,6 +6,6 @@ export const getTrendingPrograms = async (period = "day") => {
 
     return data;
   } catch (error) {
-    // throw error.message;
+    throw error.message;
   }
 };

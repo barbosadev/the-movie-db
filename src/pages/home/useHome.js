@@ -1,10 +1,12 @@
+import { Context } from "../../context";
 import { useNavigate } from "react-router-dom";
-import { useEffect, useState } from "react";
-import { getTrendingPrograms } from "../../services/trending";
 import { getPopular } from "../../services/popular";
+import { useContext, useEffect, useState } from "react";
+import { getTrendingPrograms } from "../../services/trending";
 
 export const useHome = () => {
   const navigate = useNavigate();
+  const [error, setError] = useContext(Context);
   const [trendingList, setTrendingList] = useState([[], []]);
   const [popularList, setPopularList] = useState([[], []]);
   const [searchText, setSearchText] = useState("");
@@ -30,16 +32,24 @@ export const useHome = () => {
   useEffect(() => {
     const getTrendingList = () => {
       if (trendingOptionSelected === "day" && trendingList[0].length === 0) {
-        getTrendingPrograms(trendingOptionSelected).then((res) => {
-          setTrendingList([[...res.results], []]);
-        });
+        getTrendingPrograms(trendingOptionSelected)
+          .then((res) => {
+            setTrendingList([[...res.results], []]);
+          })
+          .catch((error) => {
+            setError(error);
+          });
       }
 
       if (trendingOptionSelected === "week" && trendingList[1].length === 0) {
-        getTrendingPrograms(trendingOptionSelected).then((res) => {
-          const auxTrendingList = trendingList[0];
-          setTrendingList([auxTrendingList, [...res.results]]);
-        });
+        getTrendingPrograms(trendingOptionSelected)
+          .then((res) => {
+            const auxTrendingList = trendingList[0];
+            setTrendingList([auxTrendingList, [...res.results]]);
+          })
+          .catch((error) => {
+            setError(error);
+          });
       }
     };
 

@@ -6,6 +6,6 @@ export const getProgram = async (typeProgram, programId) => {
 
     return data;
   } catch (error) {
-    // throw error.message;
+    throw error.message;
   }
 };

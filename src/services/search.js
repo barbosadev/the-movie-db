@@ -8,6 +8,6 @@ export const getSearchResult = async (query) => {
 
     return data;
   } catch (error) {
-    // throw error.message;
+    throw error.message;
   }
 };
