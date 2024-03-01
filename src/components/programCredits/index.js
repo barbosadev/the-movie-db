@@ -19,7 +19,6 @@ export const ProgramCredits = ({ content, programCreditsData }) => {
               >
                 <LazyLoadImage
                   alt={programCredits.name}
-                  effect="blur"
                   className="rounded-t-lg w-full"
                   src={`https://media.themoviedb.org/t/p/w138_and_h175_face${programCredits?.profile_path}`}
                 />

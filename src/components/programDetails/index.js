@@ -25,7 +25,6 @@ export const ProgramDetails = ({ programData }) => {
           {programData.poster_path !== null ? (
             <LazyLoadImage
               className="rounded-xl"
-              effect="blur"
               alt={programData.title || programData.name}
               src={`https://media.themoviedb.org/t/p/w300_and_h450_bestv2${programData?.poster_path}`}
             />
