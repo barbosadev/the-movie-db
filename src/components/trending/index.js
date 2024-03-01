@@ -25,7 +25,16 @@ export const Trending = ({
         }}
         className="pl-10 bg-no-repeat bg-cover"
       >
-        <HorizontalList dataList={trendingList} handleProgram={handleProgram} />
+        <HorizontalList
+          dataList={
+            trendingList[
+              content.switch_options.findIndex(
+                (option) => option.option === period
+              )
+            ]
+          }
+          handleProgram={handleProgram}
+        />
       </div>
     </div>
   );

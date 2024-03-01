@@ -19,7 +19,16 @@ export const MostPopular = ({
         />
       </div>
       <div className="pl-10">
-        <HorizontalList dataList={popularList} handleProgram={handleProgram} />
+        <HorizontalList
+          dataList={
+            popularList[
+              content.switch_options.findIndex(
+                (option) => option.option === media
+              )
+            ]
+          }
+          handleProgram={handleProgram}
+        />
       </div>
     </div>
   );
