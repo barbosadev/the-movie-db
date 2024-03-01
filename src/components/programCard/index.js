@@ -7,7 +7,7 @@ import "react-lazy-load-image-component/src/effects/blur.css";
 export const ProgramCard = ({ program, handleProgram, media }) => {
   return (
     <div className="min-h-80 bg-opacity-50 min-w-36">
-      <div className="relative h-72">
+      <div className="relative">
         <LazyLoadImage
           onClick={() => handleProgram(program.media_type || media, program.id)}
           className="rounded-xl cursor-pointer"

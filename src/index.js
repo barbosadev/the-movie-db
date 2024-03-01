@@ -8,16 +8,16 @@ import { Program } from "./pages/program";
 import { SearchPage } from "./pages/search";
 import { SpeedInsights } from "@vercel/speed-insights/react";
 import { Analytics } from "@vercel/analytics/react";
+import { routes } from "./routes";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <React.StrictMode>
     <BrowserRouter>
       <Routes>
-        <Route element={<Home />} path="/" />
-        <Route element={<Program />} path="/movie/:programId" />
-        <Route element={<Program />} path="/tv/:programId" />
-        <Route element={<SearchPage />} path="/search-page/:query" />
+        {routes.map((route, i) => (
+          <Route key={i} element={route.component} path={route.path} />
+        ))}
       </Routes>
     </BrowserRouter>
     <SpeedInsights />
