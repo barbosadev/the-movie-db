@@ -4,12 +4,12 @@ import { shortDateMask } from "../../utils/dateMask";
 import { LazyLoadImage } from "react-lazy-load-image-component";
 import "react-lazy-load-image-component/src/effects/blur.css";
 
-export const ProgramCard = ({ program, handleProgram }) => {
+export const ProgramCard = ({ program, handleProgram, media }) => {
   return (
     <div className="min-h-80 bg-opacity-50 min-w-36">
       <div className="relative h-72">
         <LazyLoadImage
-          onClick={() => handleProgram(program.media_type, program.id)}
+          onClick={() => handleProgram(program.media_type || media, program.id)}
           className="rounded-xl cursor-pointer"
           alt={program.title || program.name}
           effect="blur"

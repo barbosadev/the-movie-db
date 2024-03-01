@@ -27,6 +27,7 @@ export const MostPopular = ({
               )
             ]
           }
+          media={media}
           handleProgram={handleProgram}
         />
       </div>
