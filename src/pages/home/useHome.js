@@ -11,18 +11,6 @@ export const useHome = () => {
   const [trendingOptionSelected, setTrendingOptionSelected] = useState("day");
   const [popularOptionSelected, setPopularOptionSelected] = useState("tv");
 
-  const getTrendingList = () => {
-    getTrendingPrograms(trendingOptionSelected).then((res) => {
-      setTrendingList(res.results);
-    });
-  };
-
-  const getPopularList = () => {
-    getPopular(popularOptionSelected).then((res) => {
-      setPopularList(res.results);
-    });
-  };
-
   const handleSearch = (query) => {
     navigate(`/search-page/${query}`);
   };
@@ -39,8 +27,25 @@ export const useHome = () => {
     setPopularOptionSelected(option);
   };
 
-  useEffect(() => getTrendingList(), [trendingOptionSelected]);
-  useEffect(() => getPopularList(), [popularOptionSelected]);
+  useEffect(() => {
+    const getTrendingList = () => {
+      getTrendingPrograms(trendingOptionSelected).then((res) => {
+        setTrendingList(res.results);
+      });
+    };
+
+    getTrendingList();
+  }, [trendingOptionSelected]);
+
+  useEffect(() => {
+    const getPopularList = () => {
+      getPopular(popularOptionSelected).then((res) => {
+        setPopularList(res.results);
+      });
+    };
+
+    getPopularList();
+  }, [popularOptionSelected]);
 
   return {
     trendingList,

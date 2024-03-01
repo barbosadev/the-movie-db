@@ -1,7 +1,3 @@
-import { shortDateMask } from "../../utils/dateMask.js";
-import { roundVote } from "../../utils/roundVote";
-import { useNavigate } from "react-router-dom";
-import { RatingSm } from "../rating";
 import { ProgramCard } from "../programCard/index.js";
 
 export const HorizontalList = ({ dataList, handleProgram }) => {

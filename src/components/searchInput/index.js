@@ -3,6 +3,11 @@ export const SearchInput = ({ text, onChange, handleSearch, content }) => {
     <div>
       <input
         onChange={onChange}
+        onKeyDown={(event) => {
+          if (event.key === "Enter") {
+            handleSearch();
+          }
+        }}
         className="w-full h-12 rounded-full px-6 focus:outline-0 text-gray-500"
         type="text"
         name="search"

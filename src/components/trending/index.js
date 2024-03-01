@@ -10,7 +10,7 @@ export const Trending = ({
 }) => {
   return (
     <div className="mb-10">
-      <div className="py-8 px-8 flex items-center gap-4">
+      <div className="py-8 px-8 flex items-center gap-4 flex-wrap">
         <h1 className="text-2xl font-bold">{content.title}</h1>
         <DataSwitch
           options={content.switch_options}

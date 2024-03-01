@@ -41,3 +41,12 @@ export const numericDateMask = (date) => {
     }
   );
 };
+
+export const fullYearDateMask = (date) => {
+  return new Date(convertDateToUTC(new Date(date))).toLocaleDateString(
+    "pt-BR",
+    {
+      year: "numeric",
+    }
+  );
+};
