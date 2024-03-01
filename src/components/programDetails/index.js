@@ -1,6 +1,8 @@
 import { Rating } from "../rating";
 import { minutesToHours } from "../../utils/time";
 import { roundVote } from "../../utils/roundVote";
+import "react-lazy-load-image-component/src/effects/blur.css";
+import { LazyLoadImage } from "react-lazy-load-image-component";
 import { fullYearDateMask, numericDateMask } from "../../utils/dateMask";
 
 export const ProgramDetails = ({ programData }) => {
@@ -21,9 +23,9 @@ export const ProgramDetails = ({ programData }) => {
       >
         <div className="px-10 py-8 flex text-white gap-8 items-center flex-wrap md:flex-nowrap">
           {programData.poster_path !== null ? (
-            <img
-              loading="lazy"
+            <LazyLoadImage
               className="rounded-xl"
+              effect="blur"
               alt={programData.title || programData.name}
               src={`https://media.themoviedb.org/t/p/w300_and_h450_bestv2${programData?.poster_path}`}
             />
@@ -34,10 +36,10 @@ export const ProgramDetails = ({ programData }) => {
               }}
               className="h-96 w-64 flex items-center justify-center rounded-lg"
             >
-              <img
+              <LazyLoadImage
                 alt={programData.title || programData.name}
                 className="h-40 cursor-pointer"
-                loading="lazy"
+                effect="blur"
                 src={
                   "https://www.themoviedb.org/assets/2/v4/glyphicons/basic/glyphicons-basic-38-picture-grey-c2ebdbb057f2a7614185931650f8cee23fa137b93812ccb132b9df511df1cfac.svg"
                 }

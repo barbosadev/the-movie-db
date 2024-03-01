@@ -1,16 +1,18 @@
-import { shortDateMask } from "../../utils/dateMask";
-import { roundVote } from "../../utils/roundVote";
 import { RatingSm } from "../rating";
+import { roundVote } from "../../utils/roundVote";
+import { shortDateMask } from "../../utils/dateMask";
+import { LazyLoadImage } from "react-lazy-load-image-component";
+import "react-lazy-load-image-component/src/effects/blur.css";
 
 export const ProgramCard = ({ program, handleProgram }) => {
   return (
     <div className="min-h-72 bg-opacity-50 min-w-36">
       <div className="relative">
-        <img
+        <LazyLoadImage
           onClick={() => handleProgram(program.media_type, program.id)}
-          loading="lazy"
           className="rounded-xl cursor-pointer"
           alt={program.title}
+          effect="blur"
           src={`https://image.tmdb.org/t/p/w220_and_h330_face${program.poster_path}`}
         />
         <RatingSm vote_average={roundVote(program.vote_average)} />

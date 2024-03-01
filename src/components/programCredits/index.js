@@ -1,3 +1,6 @@
+import { LazyLoadImage } from "react-lazy-load-image-component";
+import "react-lazy-load-image-component/src/effects/blur.css";
+
 export const ProgramCredits = ({ content, programCreditsData }) => {
   return (
     <div className="px-8 py-6 flex flex-col gap-2">
@@ -14,10 +17,10 @@ export const ProgramCredits = ({ content, programCreditsData }) => {
                   boxShadow: "0 2px 8px rgba(0,0,0,.1)",
                 }}
               >
-                <img
+                <LazyLoadImage
                   alt={programCredits.name}
+                  effect="blur"
                   className="rounded-t-lg w-full"
-                  loading="lazy"
                   src={`https://media.themoviedb.org/t/p/w138_and_h175_face${programCredits?.profile_path}`}
                 />
                 <div className="px-2 py-2">
